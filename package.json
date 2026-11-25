@@ -1,0 +1,13 @@
+{
+  "name": "atividade_remota",
+  "version": "1.0.0",
+  "description": "```mermaid classDiagram   class CanalNotificacao {     <<interface>>     +enviar(cliente, mensagem)   }   class Notificador {     <<abstract>>   }   class NotificadorSMS   class NotificadorEmail   class NotificadorApp   class Cliente {     +nome     +cpf     +endereco     +renda     +contas: Conta[]     +canal: CanalNotificacao   }   class Conta {     +numero     +agencia     +dataAbertura     +saldo     +limiteDiario     +bloqueada     +sacar(valor)   }   class ErroSaque {     <<abstract>>   }   class ValorInvalidoErro   class ContaBloqueadaErro   class SaldoInsuficienteErro   class LimiteDiarioExcedidoErro   class SistemaBancario {     +sacar(cliente, conta, valor)   }   CanalNotificacao <|.. Notificador   Notificador <|-- NotificadorSMS   Notificador <|-- NotificadorEmail   Notificador <|-- NotificadorApp   Cliente \"1\" o-- \"1..*\" Conta   Cliente --> CanalNotificacao   SistemaBancario --> Conta   SistemaBancario --> Cliente   ErroSaque <|-- ValorInvalidoErro   ErroSaque <|-- ContaBloqueadaErro   ErroSaque <|-- SaldoInsuficienteErro   ErroSaque <|-- LimiteDiarioExcedidoErro ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
